@@ -3,6 +3,11 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+"""
+Используем очередь, пока у нас в ней есть элементы, которые мы кидаем через pop листья в очередь и
+строку со стрелочками, затем сращиваем элементы, которые одинаково начинаются и кончаются
+"""
+
 
 root = TreeNode(1, TreeNode(2, TreeNode(5)), TreeNode(3))
 

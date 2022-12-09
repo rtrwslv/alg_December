@@ -4,7 +4,12 @@ class TreeNode:
         self.left = left
         self.right = right
 
-root = TreeNode(3, TreeNode(9, TreeNode(10), TreeNode(5)), TreeNode(20, TreeNode(15), TreeNode(7)))
+root = TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7)))
+
+"""
+Идем по очереди по дереву, добавляя в очередь уровень, а посла просчета уровня - вырезаем его
+с помощью pop
+"""
 
 queue = []
 result = []
@@ -20,6 +25,7 @@ while(queue):
             queue.append(node.left)
         if node.right:
             queue.append(node.right)
+    print(values)
     result.append(values/qlen)
 
 print(result)

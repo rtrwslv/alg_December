@@ -1,4 +1,8 @@
 def closedIsland(matrix):
+    """
+    Использован алгоритм из первого задания с некоторыми доработками, а именно - возвращаем мы теперь
+    0 и 1.
+    """
     rows = len(matrix)
     colums = len(matrix[0])
     def check(i, j):

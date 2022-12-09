@@ -1,4 +1,8 @@
 def numEnclaves(matrix):
+    """
+    Метод check используется для рекурсивной проверки до упора, контактирует ли элемент
+    с 0-ми и возвращает true false в зависимости от результата.
+    """
     rows = len(matrix)
     colums = len(matrix[0])
     def check(i, j):
