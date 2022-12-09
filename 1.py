@@ -23,4 +23,4 @@ def numEnclaves(matrix):
     if count == float("inf"):
         return 0
     return count
-print(numEnclaves([[0,1,1,0],[0,0,1,0],[0,0,1,0],[0,0,0,0]]))
+print(numEnclaves([[0,0,0,0],[1,0,1,0],[0,1,1,0],[0,0,0,0]]))

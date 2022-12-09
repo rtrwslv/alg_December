@@ -16,7 +16,6 @@ while(queue):
     for i in range(qlen):
         node = queue.pop(0)
         values += node.val
-        print(node.val, qlen)
         if node.left:   
             queue.append(node.left)
         if node.right:
