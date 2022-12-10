@@ -5,25 +5,34 @@ class TreeNode:
         self.right = right
 
 """
-добавляем в очередь элементы, пока не дойдем до последнего, а затем считаем длину между первым и последним
-элементом, добавляя еденицу если у корня есть и лево и право
+По сути, мы складываем высоту левого и правого дерева
 """
 
-root = TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5)), TreeNode(3))
-quene = []
-result = 0
-quene.append(root)
+root = TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5)), TreeNode(3, TreeNode(4), TreeNode(5)))
+quene_left = []
+quene_right = []
+result_left = 0
+result_right = 0
+quene_left.append(root.left)
+quene_right.append(root.right)
 
-if quene[0].left and quene[0].right:
-    result += 1
 
-while quene:
-    if quene[0].left:
-        quene.append(quene[0].left)
-    if quene[0].right:
-        quene.append(quene[0].right)
-    elif not (quene[0].right and quene[0].left):
-        result += 1
-    quene.pop(0)
+while quene_left:
+    if quene_left[0].left:
+        quene_left.append(quene_left[0].left)
+    if quene_left[0].right:
+        quene_left.append(quene_left[0].right)
+    elif not (quene_left[0].right and quene_left[0].left):
+        result_left += 1
+    quene_left.pop(0)
 
-print(result)
+while quene_right:
+    if quene_right[0].left:
+        quene_right.append(quene_right[0].left)
+    if quene_right[0].right:
+        quene_right.append(quene_right[0].right)
+    elif not (quene_right[0].right and quene_right[0].left):
+        result_right += 1
+    quene_right.pop(0)
+
+print(result_left + result_right)
